@@ -1,0 +1,15 @@
+@font-face {
+  font-family: HyliaSerif;
+  src: url("HyliaSerif.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: HyliaSerif;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
