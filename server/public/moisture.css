@@ -1,9 +1,0 @@
-@font-face {
-  font-family: HyliaSerif;
-  src: url("HyliaSerif.otf") format("opentype");
-}
-
-* {
-  box-sizing: border-box;
-  font-family: HyliaSerif;
-}

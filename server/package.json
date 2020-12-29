@@ -5,8 +5,10 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "luxon": "^1.25.0",
     "sockjs-client": "^1.5.0",
-    "tmi.js": "^1.7.1"
+    "tmi.js": "^1.7.1",
+    "ws": "^7.4.1"
   },
   "devDependencies": {},
   "scripts": {

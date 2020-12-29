@@ -1,20 +1,23 @@
 <html>
   <head>
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="tree.css">
     <script src="lib/jquery.min.js"></script>
     <script src="lib/TweenMax.min.js"></script>
     <script src="lib/lodash.min.js"></script>
   </head>
-  <body onload="generate()">
-    <svg viewBox="0 0 550 400">
-      <g id="stems" fill="none" stroke="green"></g>
-      <g id="leaves"></g>
-    </svg>
-    <div id="subtitle" style="text-align:center;">
-      <div id="name" style="color:green;-webkit-text-stroke:1px white;font-size: 60;"></div>
-      <div style="color:black;-webkit-text-stroke:1px white;font-size:50;">just watered the plant!</div>
+  <body>
+    <div id="main" style="visibility: hidden;">
+      <svg viewBox="0 0 550 400">
+        <g id="stems" fill="none" stroke="green"></g>
+        <g id="leaves"></g>
+      </svg>
+      <div id="subtitle" style="text-align:center;">
+        <div id="name" style="color:green;font-size: 60;"></div>
+        <div style="color:black;font-size:50;">just watered the plant!</div>
+      </div>
     </div>
   </body>
-  <script src="tree.js"></script>
   <script src="treeAnimation.js"></script>
-</html>
+  <script src="tree.js"></script>
+  </html>
