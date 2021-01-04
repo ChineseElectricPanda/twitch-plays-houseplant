@@ -1,3 +1,4 @@
 Light bulb https://codepen.io/janmez/pen/ZEExXmq
 Font http://www.artsyomni.com/hyliaserif
 Plant animation https://codepen.io/osublake/pen/gpGEye
+Reconnecting WebSocket https://github.com/joewalnes/reconnecting-websocket

@@ -4,6 +4,7 @@ const tmi = require('tmi.js');
 const WebSocket = require('ws');
 
 const Slobs = require('./slobs');
+const CommonUtils = require('./commonUtils');
 
 const port = 42069;
 
@@ -145,7 +146,10 @@ function OnMidnight()
   // Reload the stats page to reset the counters.
   slobs.setStatsVisibility(false)
     .then(() => {
-      slobs.setStatsVisibility(true);
+      return CommonUtils.SetTimeoutPromise(1000);
+    })
+    .then(() => {
+      return slobs.setStatsVisibility(true);
     });
 
   setTimeout(OnMidnight, 86400000);
@@ -191,7 +195,7 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 
   setTimeout(() => {
-    slobs.reloadSources();
+    //slobs.reloadSources();
     
     const now = new Date();
     if (now.getHours() >= 22 || now.getHours() < 9)
@@ -258,9 +262,9 @@ client.on('message', (target, context, message, self) => {
   // Ignore messages from the bot
   if (self) { return; }
 
-  message = message.trim();
+  message = message.trim().toLowerCase();
 
-  if (message == '!forcelight' && target == '#chineseelectricpanda')
+  if (message == '!forcelight' && context.username == 'chineseelectricpanda')
   {
     ToggleLight();
   }
@@ -269,12 +273,12 @@ client.on('message', (target, context, message, self) => {
      if (message == '!water')
     {
       console.log('watering');
-      EnqueueWatering(target);
+      EnqueueWatering(context.username);
     }
     else if (message == '!light')
     {
       console.log('light');
-      EnqueueLight(target);
+      EnqueueLight(context.username);
     }
   }
 });

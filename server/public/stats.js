@@ -3,7 +3,7 @@ var lightTime = 0;
 
 var isLightOn = false;
 
-const ws = new WebSocket('ws://localhost:42070/');
+const ws = new ReconnectingWebSocket('ws://localhost:42070/');
 ws.onmessage = event => {
   if (event.data.startsWith('waterer:') && event.data.length > 8 )
   {

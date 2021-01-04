@@ -1,4 +1,5 @@
 const SockJS = require('sockjs-client');
+const CommonUtils = require('./commonUtils');
 
 class Slobs
 {
@@ -71,17 +72,29 @@ class Slobs
     return Promise.all([
       this.setWateringAlertVisibility(false)
         .then(() => {
+          return CommonUtils.SetTimeoutPromise(1000);
+        })
+        .then(() => {
           return this.setWateringAlertVisibility(true)
         }),
       this.setLightAlertVisibility(false)
+        .then(() => {
+          return CommonUtils.SetTimeoutPromise(1000);
+        })
         .then(() => {
           return this.setLightAlertVisibility(true);
         }),
       this.setMoistureLevelVisibility(false)
         .then(() => {
+          return CommonUtils.SetTimeoutPromise(1000);
+        })
+        .then(() => {
           this.setMoistureLevelVisibility(true);
         }),
       this.setStatsVisibility(false)
+        .then(() => {
+          return CommonUtils.SetTimeoutPromise(1000);
+        })
         .then(() => {
           this.setStatsVisibility(true);
         }),

@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://localhost:42070/');
+const ws = new ReconnectingWebSocket('ws://localhost:42070/');
 ws.onmessage = event => {
   if (event.data.startsWith('lighter:'))
   {

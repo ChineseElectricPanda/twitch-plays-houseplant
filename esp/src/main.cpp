@@ -88,14 +88,15 @@ void loop() {
                         }
                         else if (header.startsWith("POST /light"))
                         {
-                            delay(100);
+                            // Delays before and after to avoid interference issues
+                            delay(500);
                             servo.attach(SERVO_PIN);
                             servo.write(180);
                             delay(500);
                             servo.write(0);
                             delay(500);
                             servo.detach();
-                            delay(100);
+                            delay(500);
 
                             client.println("HTTP/1.1 200 OK");
                             client.println("Content-type:text/plain");

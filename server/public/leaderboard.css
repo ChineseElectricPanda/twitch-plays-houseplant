@@ -1,0 +1,17 @@
+.list {
+  width: 500px;
+}
+
+.name {
+  display: inline-block;
+  width: 400px;
+  text-align: left;
+  font-size: 40px;
+}
+
+.score {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  font-size: 40px;
+}
